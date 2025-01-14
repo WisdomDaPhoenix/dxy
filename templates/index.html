@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dmarketforces - Courses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to </h1>  <span class="dxy">DXY.IO</span>
+        <p class="ptyping">Your trusted place for tech courses!</p>
+        <a href="#registration-form">
+        <button type="button" class="regbtn">REGISTER NOW</button>
+        </a>
+    </header>
+    <main>
+        <section class="course-list" style="display: flex; flex-direction: row; width: 95%;
+          height: 17rem; padding: 23px; margin: 10px;">
+            <img src="{{ url_for('static',filename='secretary.png') }}" alt="Seretary pic">
+            <div class="coursebox">
+                Front-end Development
+                <p>Kick-start your journey into the exciting world of web development? Learn to craft stunning, responsive websites. </p>
+                <span class="">Duration: 3 months</span>
+            </div>
+            <div class="coursebox">
+                Back-end Development
+                <p>Build secure, scalable applications with hands-on training. Industry-ready skills for high-paying opportunities</p>
+                <span class="">Duration: 3 months</span>
+            </div>
+            <div class="coursebox">
+                Data Analytics
+                <p>Transform data into actionable insights with our analytics course. Solve real-world problems with hands-on projects.</p>
+                <span class="">Duration: 3 months</span>
+            </div>
+        </section>
+         <section class="course-list" style="display: flex; align-items: center;
+                justify-content: space-between; padding: 2rem; background-color: #FAEBD7;">
+
+             <img src="{{ url_for('static',filename='whyus.png') }}" alt="Course Illustration" class="course-image">
+             <span style="font-size: 1.2rem; text-align: center;"> Industry-Relevant Content | Expert Trainers | Certification & Recognition | Interactive and Engaging </span>
+
+        </section>
+        <section class="course-list" style="background-color: #000000;">
+            <h2 style="color: #FA8072;">Our Courses</h2>
+            <div class="course">
+                <h3> <span class="material-symbols-outlined" style="margin-right: 14px;">globe_book </span> Front and Backend Development</h3>
+                <p>Learn how to build modern web applications from scratch.</p>
+            </div>
+            <div class="course">
+                <h3> <span class="material-symbols-outlined">passkey</span> Cybersecurity</h3>
+                <p>Protect your systems and learn about ethical hacking.</p>
+            </div>
+            <div class="course">
+                <h3>Data Analytics</h3>
+                <p>Transform data into actionable insights with our analytics course.</p>
+            </div>
+            <div class="course">
+                <h3>And More!</h3>
+                <p>Explore other exciting courses we offer!</p>
+            </div>
+        </section>
+
+        <section class="registration">
+            <h2>Register for a Course</h2>
+            <form id="registration-form" method="POST" action="/submit" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="backend-pythonflask">Backend Development (Python/Flask)</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="data-analytics">Data Analytics</option>
+                    <option value="backend-nodejs">Backend Development (Node/Express.js)</option>
+                    <option value="linux">Linux Foundations</option>
+                    <option value="nocode-dev">Nocode Development</option>
+                    <option value="ui-ux-dev">UI/UX Development</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+            <p id="response-message"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 dmarketforces. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
